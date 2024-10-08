@@ -1,0 +1,9 @@
+train: data/images/train
+val: data/images/val
+
+# number of classes
+nc: 14
+
+# class names
+names: ["Mở rộng động mạch chủ","Sụp phổi","Canxi hóa","Tăng kích thước tim","Tổn thất (thường là do nước hoặc mảng u mủ)",
+        "Bệnh phổi nội mô","Thâm nhập (thường là các chất lỏng hoặc tế bào)","Độ mờ của phổi","U nhỏ/ khối u"," Bệnh đốm khác","Tràn dịch màng phổi","Độ dày của màng phổi"," Thủy thũng (khi không khí xâm nhập vào khoang nội màng phổi)","Xơ phổi"]

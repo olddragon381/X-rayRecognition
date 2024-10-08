@@ -1,0 +1,291 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  background-image: radial-gradient(
+      circle at top right,
+      rgba(121, 68, 154, 0.13),
+      transparent
+    ),
+    radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent);
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+a {
+  position: absolute;
+  bottom: 2vmin;
+  right: 2vmin;
+  color: rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fff;
+}
+
+@keyframes blink {
+  0% {
+    color: rgb(255, 255, 255);
+  }
+
+  25% {
+    color: rgb(255, 255, 0);
+  }
+
+  50% {
+    color: #bcc03c;
+  }
+
+  75% {
+    color: rgb(255, 255, 0);
+  }
+
+  100% {
+    color: rgb(255, 255, 255);
+  }
+}
+
+.header {
+  background-color: rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: xxx-large;
+  color: white;
+  text-align: center;
+  padding: 30px;
+  animation: blink 2s infinite;
+}
+
+.info {
+  text-align: left;
+  color: gray;
+  width: 30%;
+  margin: auto;
+  padding: 20px;
+  font-size: 14px;
+}
+
+.content {
+  width: 100%;
+}
+
+.upload_part {
+  background-color: rgba(0, 0, 0, 0.3);
+  text-align: center;
+  padding: 10px 0;
+}
+
+.upload_button {
+  background-color: #feed06;
+  color: black;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: bolder;
+  border: 0px;
+  border-radius: 5px;
+  -webkit-box-shadow: 6px 8px 18px -5px rgba(0, 0, 0, 0.38);
+  -moz-box-shadow: 6px 8px 18px -5px rgba(0, 0, 0, 0.38);
+  box-shadow: 6px 8px 18px -5px rgba(0, 0, 0, 0.38);
+  cursor: pointer;
+}
+
+@keyframes pulse {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.upload_button:hover {
+  animation: pulse 1s infinite;
+  color: #ffffff;
+  background: #bcc03c;
+}
+
+.upload_hint {
+  margin: 10px;
+  font-size: 14px;
+  color: rgb(200, 200, 200);
+}
+
+.result_part {
+  text-align: center;
+}
+
+.result_part:hover {
+  cursor: pointer;
+}
+
+.result_title {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.result_id {
+  padding: 10px;
+  margin: 15px;
+  font-size: 16px;
+  border-radius: 10px;
+  /* Thiết lập bo tròn góc */
+  background-color: rgba(255, 255, 255, 0.2);
+  /* Màu nền trong suốt */
+  font-weight: bold;
+}
+
+.result_id_number {
+  margin: 15px;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: #feed06;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+.col-md-6 {
+  text-align: center;
+  width: 50%;
+  position: relative;
+}
+
+.result_id {
+  padding: 10px;
+  margin: 15px;
+  font-size: 16px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 5%;
+}
+
+.warning_id {
+  font-size: 18px;
+  text-align: center;
+  padding: 10px 0;
+}
+
+img {
+  max-width: 350px;
+  max-height: 325px;
+  border-radius: 1rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+  transform: scale(1.2);
+  /* Phóng to khi di chuột vào */
+}
+
+.row {
+  padding: 0 18%;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: auto;
+}
+
+/* CSS cho hình ảnh phóng to */
+.overlay img {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 90%;
+  padding: 20px;
+}
+
+/* CSS cho nút đóng */
+.closebtn {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+}
+
+/* CSS để tạo khung giữa màn hình */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+}
+
+/* CSS cho nút đóng */
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+}
+
+#dataxquang {
+  height: 400px;
+  /* Adjust height as needed */
+  overflow-y: auto;
+  /* Enable vertical scroll */
+  border: 1px solid #ccc;
+  /* Optional: Add border for better visibility */
+  padding: 10px;
+  /* Optional: Add padding for better spacing */
+}
+
+/* đọc văn bản */
+.voice-icon {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background-color: #007bff;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
